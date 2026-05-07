@@ -3,22 +3,23 @@ name: Mule CI
 on:
  push:
   branches:
-   main
+   - main
 
 jobs:
  build:
   runs-on: ubuntu-latest
- 
+
+
   steps:
    - name: Checkout Project
-    uses: actions/checkout@v3
+     uses: actions/checkout@v3
 
    - name: Install Java
      uses: actions/setup-java@v3
      with:
-      distribution: 'temurin'
-      java-version: '8'
+       distribution: 'temurin'
+       java-version: '8'
 
-   -  name: Build Mule Project
-      run: mvn clean package -DskipTests
+   - name: Build Mule Project
+     run: mvn clean package -DskipTests
 
